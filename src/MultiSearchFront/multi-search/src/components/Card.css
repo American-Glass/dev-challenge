@@ -1,0 +1,13 @@
+.card {
+	width: 50%;
+	margin-top: 30px;
+}
+
+.item-id {
+	color: #888;
+	font-weight: 600;
+}
+
+.no-content {
+	color: #888;
+}
