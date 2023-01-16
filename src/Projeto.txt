@@ -1,0 +1,3 @@
+O projeto está separado em 2 partes, o front que contem código JS, HTML e CSS, utilizando do framework REACT e o back que contem a API feita em C#.
+Para executar o projeto, primeiro abrir o mesmo no Visual Studio e rodar a parte da API e então utilizar via terminar, na pasta "multi-search" o comando "npm start".
+O Front foi criado utilizando apenas o bootstrap que já esta nas pastas, assim não é necessário instalar package.
