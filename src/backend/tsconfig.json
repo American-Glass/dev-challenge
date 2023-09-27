@@ -9,5 +9,6 @@
     "sourceMap": true,
     "outDir": "dist",
     "lib": ["esnext"],
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
   }
 }
