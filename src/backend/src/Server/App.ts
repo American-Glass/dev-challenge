@@ -21,7 +21,7 @@ export default class App {
             res.status(200).json('OK');
         })
 
-        this.app.use('/app/multiSearch', this.multiSearchRouter.router)
+        this.app.use('/api/multiSearch', this.multiSearchRouter.router)
     }
 
     private config() {

@@ -20,11 +20,11 @@ import workforceDB from './src/DB/workforce.json'
 export const server: Express = express();
 const PORT: number = 3001;
 
-const equipmentsModel = new MultiSearchModel<IEquipments>(equipmentsDB);
-const materialsModel = new MultiSearchModel<IMaterials>(materialsDB);
-const purchaseOrdersModel = new MultiSearchModel<IPurchaseOrder>(purchaseOrdersDB);
-const salesOrdersModel = new MultiSearchModel<ISalesOrders>(salesOrdersDB);
-const workforceModel = new MultiSearchModel<IWorkforce>(workforceDB);
+export const equipmentsModel = new MultiSearchModel<IEquipments>(equipmentsDB);
+export const materialsModel = new MultiSearchModel<IMaterials>(materialsDB);
+export const purchaseOrdersModel = new MultiSearchModel<IPurchaseOrder>(purchaseOrdersDB);
+export const salesOrdersModel = new MultiSearchModel<ISalesOrders>(salesOrdersDB);
+export const workforceModel = new MultiSearchModel<IWorkforce>(workforceDB);
 
 const multiSearchService = new MultiSearchService(
     equipmentsModel,

@@ -9,7 +9,7 @@ export default class MultiSearchController implements IMultiSearchController {
         const { body: { text } } = req;
 
         if (!text) {
-            return res.status(400).json("message: Texto inválido")
+            return res.status(400).json({ message: 'Texto inválido' });
         }
     
         const result = await this.multiSearchService.findAllByName(text);
