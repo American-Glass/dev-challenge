@@ -1,5 +1,11 @@
 import { Request, Response } from 'express';
-import { IEquipments, IMaterials, IPurchaseOrder, ISalesOrders, IWorkforce } from '.';
+import {
+    IEquipments,
+    IMaterials,
+    IPurchaseOrder,
+    ISalesOrders,
+    IWorkforce }
+from '.';
 
 interface IResponse {
     equipments: IEquipments[],

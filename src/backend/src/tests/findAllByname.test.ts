@@ -12,6 +12,7 @@ import {
     server,
     workforceModel }
 from '../../index';
+import { IEquipments, IMaterials, IPurchaseOrder, ISalesOrders, IWorkforce } from '../Interface';
 
 chai.use(chaiHttp);
 
@@ -21,19 +22,19 @@ describe('findAllByName ListTable', () => {
   before(() => {
     sinon
       .stub(equipmentsModel, 'findAllByName')
-      .resolves(db.equipments as any);
+      .resolves(db.equipments as IEquipments[]);
     sinon
       .stub(materialsModel, 'findAllByName')
-      .resolves(db.materials as any);
+      .resolves(db.materials as IMaterials[]);
     sinon
       .stub(purchaseOrdersModel, 'findAllByName')
-      .resolves(db.purchaseOrders as any);
+      .resolves(db.purchaseOrders as IPurchaseOrder[]);
     sinon
       .stub(salesOrdersModel, 'findAllByName')
-      .resolves(db.salesOrders as any);
+      .resolves(db.salesOrders as ISalesOrders[]);
     sinon
       .stub(workforceModel, 'findAllByName')
-      .resolves(db.workforce as any);
+      .resolves(db.workforce as IWorkforce[]);
   });
 
   after(()=>{
@@ -69,7 +70,6 @@ describe('findAllByName ListTable', () => {
         .end((_err, res) => {
             expect(res).to.have.status(400);
             expect(res).to.be.json;
-            // expect(res.body).to.be.a('object');
             expect(res.text).to.be.equal(JSON.stringify({ message: 'Texto inválido'}));
             done();
     });
