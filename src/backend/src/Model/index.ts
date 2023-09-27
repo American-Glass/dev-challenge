@@ -1,3 +1,3 @@
-import EquipmentsModel from './EquipmentsModel';
+import MultiSearchModel from './MultiSearchModel';
 
-export { EquipmentsModel };
+export { MultiSearchModel };

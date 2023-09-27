@@ -1,12 +1,24 @@
 import { Request, Response } from 'express';
-import { IEquipments } from '.';
+import { IEquipments, IMaterials, IPurchaseOrder, ISalesOrders, IWorkforce } from '.';
+
+interface IResponse {
+    equipments: IEquipments[],
+    materials: IMaterials[],
+    purchaseOrders: IPurchaseOrder[],
+    salesOrders: ISalesOrders[],
+    workforce: IWorkforce[]
+}
 
 interface IMultiSearchController {
-    findOne: (req: Request, res: Response) => Promise<Response>,
+    findAllByName: (req: Request, res: Response) => Promise<Response>,
 }
 
 interface IMultiSearchService {
-    findOne: () => Promise<IEquipments | null>,
+    findAllByName: (text: string) => Promise<IResponse>,
 }
 
-export { IMultiSearchController, IMultiSearchService }
+interface IMultiSearchModel<T> {
+    findAllByName(text: string): Promise<T[]>,
+}
+
+export { IMultiSearchController, IMultiSearchService, IMultiSearchModel, IResponse }

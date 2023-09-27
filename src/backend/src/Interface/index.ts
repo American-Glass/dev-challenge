@@ -1,9 +1,25 @@
-import IEquipments, { IEquipmentsModel } from './Equipments';
-import { IMultiSearchController, IMultiSearchService } from './MultiSearch';
+import {
+    IEquipments,
+    IMaterials,
+    IPurchaseOrder,
+    ISalesOrders,
+    IWorkforce
+} from './Tables';
+import {
+    IMultiSearchController,
+    IMultiSearchService,
+    IMultiSearchModel,
+    IResponse }
+from './MultiSearch';
 
 export {
     IEquipments,
-    IEquipmentsModel,
+    IMaterials,
+    IPurchaseOrder,
+    ISalesOrders,
+    IWorkforce,
     IMultiSearchController,
-    IMultiSearchService
+    IMultiSearchService,
+    IMultiSearchModel,
+    IResponse
 };

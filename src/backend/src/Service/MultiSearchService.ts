@@ -1,12 +1,36 @@
-import { IEquipments, IEquipmentsModel } from '../Interface';
-import { IMultiSearchService } from '../Interface';
+import {
+  IMultiSearchService,
+  IMultiSearchModel,
+  IResponse,
+  IEquipments,
+  IMaterials,
+  IPurchaseOrder,
+  ISalesOrders,
+  IWorkforce }
+from '../Interface';
 
 export default class MultiSearchService implements IMultiSearchService {
-    constructor(private equipmentsModel: IEquipmentsModel) {}
+    constructor(
+      private equipmentsModel: IMultiSearchModel<IEquipments>,
+      private materialsModel: IMultiSearchModel<IMaterials>,
+      private purchaseOrdersModel: IMultiSearchModel<IPurchaseOrder>,
+      private salesOrdersModel: IMultiSearchModel<ISalesOrders>,
+      private workforceModel: IMultiSearchModel<IWorkforce>,
+    ) {}
   
-    public async findOne(): Promise<IEquipments | null> {
-      const list = await this.equipmentsModel.findOne();
+    public async findAllByName(text: string): Promise<IResponse> {
+      const equipments = await this.equipmentsModel.findAllByName(text);
+      const materials = await this.materialsModel.findAllByName(text);
+      const purchaseOrders = await this.purchaseOrdersModel.findAllByName(text);
+      const salesOrders = await this.salesOrdersModel.findAllByName(text); 
+      const workforce = await this.workforceModel.findAllByName(text);
   
-      return list;
+      return {
+        equipments,
+        materials,
+        purchaseOrders,
+        salesOrders,
+        workforce
+      };
     }
 }

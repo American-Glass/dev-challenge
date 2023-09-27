@@ -5,11 +5,15 @@ import MultiSearchService from '../Service';
 export default class MultiSearchController implements IMultiSearchController {
     constructor(private multiSearchService: MultiSearchService) {}
   
-    public async findOne(_req: Request, res: Response): Promise<Response> {
-      const result = await this.multiSearchService.findOne();
+    public async findAllByName(req: Request, res: Response): Promise<Response> {
+        const { body: { text } } = req;
 
-      console.log(result)
-      
-      return res.status(200);
+        if (!text) {
+            return res.status(400).json("message: Texto inválido")
+        }
+    
+        const result = await this.multiSearchService.findAllByName(text);
+        
+        return res.status(200).json(result);
     }
 }

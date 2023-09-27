@@ -12,7 +12,7 @@ export default class MultiSearchRoutes {
     private routes() {
         this.router.post(
             '/',
-            (req: Request, res: Response) => this.multiSearchController.findOne(req, res)
+            (req: Request, res: Response) => this.multiSearchController.findAllByName(req, res)
         )
     }
 }
