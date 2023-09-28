@@ -38,15 +38,7 @@ Acessar o link: [deploy-heroku](https://frontend-todo-list-2022.herokuapp.com/)
 
 ## O que foi desenvolvido: <a name="o-que-foi-desenvolvido-back"></a>
 
-  Foi desenvolvido um back-end para um sistema de registro de tarefas para a empresa Ebytr (Fictícia)
-
-  As tarefas são inseridas em um banco de dados **Mysql** sendo possível modelar os dados através do **prisma ORM**
-
-  É possível:
-   - Inserir Tarefas
-   - Remover Tarefas
-   - Atualizar Tarefas
-   - Ordenar Tarefas por: Ordem alfabetica, data de criação e status
+[Editando]
 
 ---
 
@@ -91,13 +83,60 @@ O banco de dados foi desenvolvido de forma simulada, não tendo necessidade de n
 
 * Endpoint: `/api/multiSearch`
 
+Body
+
 ```json
-  [
     {
-      "text": "teste"
+        "text": "teste"
     },
-    ...
-  ]
+```
+
+Response:
+
+```json
+{
+    "equipments": [
+        {
+            "EquipmentID": "",
+            "EquipmentName": ""
+        }
+    ],
+    "materials": [
+        {
+            "MaterialID": "",
+            "MaterialName": ""
+        }
+    ],
+    "purchaseOrders": [
+        {
+            "PurchaseOrderID": 0,
+            "DeliveryDate": "",
+            "Supplier": "",
+            "MaterialID": "",
+            "MaterialName": "",
+            "Quantity": 0,
+            "TotalCost": 0
+        }
+    ],
+    "salesOrders": [
+        {
+            "SalesOrderID": 0,
+            "DeliveryDate": "",
+            "Customer": "",
+            "MaterialID": "",
+            "MaterialName": "",
+            "Quantity": 0,
+            "TotalValue": 0
+        }
+    ],
+    "workforce": [
+        {
+            "WorkforceID": 0,
+            "Name": "",
+            "Shift": ""
+        }
+    ]
+}
 ```
 ---
 
@@ -105,15 +144,7 @@ O banco de dados foi desenvolvido de forma simulada, não tendo necessidade de n
 
 ## O que foi desenvolvido: <a name="o-que-foi-desenvolvido-front"></a>
 
-  Foi desenvolvido um sistema de registro de tarefas para a empresa Ebytr (Fictícia)
-
-  As tarefas são inseridas, atualizadas e removidas de forma modelada pelo back-end.
-
-  É possível:
-   - Inserir Tarefas
-   - Remover Tarefas
-   - Atualizar Tarefas
-   - Ordenar Tarefas por: Ordem alfabetica, data de criação e status
+[Editando]
 
 ---
 
