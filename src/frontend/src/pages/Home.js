@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Header, SearchBar, ProductCard } from '../components';
 import { getData } from '../services/fetchApi';
@@ -16,19 +16,39 @@ const INITIAL_DATA = {
 function Home() {
   
   const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState(INITIAL_DATA)
+  const [data, setData] = useState(INITIAL_DATA);
 
   const handleClick = async (text) => {
-    const result = await getData(text)
-    setData(result)
+    setIsLoading(true);
+    const result = await getData(text);
+    setData(result);
+    setIsLoading(false);
   }
   
  
   return(
     <div>
       <Header />
-      <SearchBar onClick={handleClick} />
-      <ProductCard data={data}/>
+      <main className='container mt-5'>
+        <SearchBar onClick={handleClick} />
+
+        <div className='d-flex'>
+          {isLoading
+          ? (
+            <div className='loading mt-5'>
+              <img
+                alt="loading"
+                src={spinner}
+                width={200}
+                height={200}
+              />
+            </div>
+          ) : (
+            <ProductCard data={data}/>
+          )}
+        </div>
+      </main>
+
     </div>
   )
 }

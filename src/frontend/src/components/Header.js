@@ -1,18 +1,17 @@
 import React from 'react';
+import logo from '../img/logo_multisearch.png'
 
 function Header() {
 
   return(
-    <header className='d-flex align-items-start justify-content-between px-4 header'>
-      <div className='d-flex flex-row align-items-end'>
-        <span>HEADER</span>
-      </div>
-      <button
-        className='btn btn-dark mt-2'
-        type='button'
-      >
-        SAIR
-      </button>
+    <header className='d-flex justify-content-center header'>
+
+      <img
+        alt="lupa"
+        src={logo}
+        width={500}
+        height={250}
+      />
     </header>
   );
 }

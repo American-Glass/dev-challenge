@@ -12,12 +12,15 @@ function ProductCard({ data }) {
       }
 
     return(
-    <>
+    <div className='container'>
         {Object.keys(data).map((products) => (
-            <table key={products}>
+            <table
+                key={products}
+                className='table table-striped table-bordered table-md'
+            >
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>#</th>
                     <th>Produto</th>
                 </tr>
                 </thead>
@@ -35,14 +38,15 @@ function ProductCard({ data }) {
                     </tr>
                 ))
                 : (
-                    <tr>
+                    <tr >
+                    <th></th>
                     <th>Nenhum produto encontrado</th>
                     </tr>
                 )}
                 </tbody>
             </table>
         ))}
-    </>
+    </div>
     );
 }
 
