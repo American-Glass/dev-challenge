@@ -5,12 +5,11 @@ function Header() {
 
   return(
     <header className='d-flex justify-content-center header'>
-
       <img
-        alt="lupa"
+        alt="logo"
         src={logo}
         width={500}
-        height={250}
+        height={210}
       />
     </header>
   );

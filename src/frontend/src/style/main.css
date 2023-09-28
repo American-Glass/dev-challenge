@@ -65,13 +65,10 @@ main {
     margin-top: 5px;
 }
 
-/* @media screen and (max-width: 990px){
-    .imagens-noticia {
-        height: 100px;
-        width: 200px;
-    }
-} */
-
+.centered {
+    margin: 0 auto !important;
+    float: none !important;
+}
 
 
 
