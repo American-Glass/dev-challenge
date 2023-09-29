@@ -4,7 +4,6 @@ import { Header, SearchBar, ProductCard } from '../components';
 import { getData } from '../services/fetchApi';
 
 import { spinner } from '../img';
-import Footer from '../components/Footer';
 
 const INITIAL_DATA = {
   equipments: [],
@@ -28,7 +27,7 @@ function Home() {
   
  
   return(
-    <div>
+    <div className='body'>
       <Header />
       <main className='container mt-5'>
         <SearchBar onClick={handleClick} />
@@ -49,8 +48,6 @@ function Home() {
           )}
         </div>
       </main>
-
-      <Footer name={'MultSearch'} />
     </div>
   )
 }

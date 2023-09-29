@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 /*elementos base*/
 body{
    background: var(--light);
@@ -63,11 +67,6 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 5px;
-}
-
-.centered {
-    margin: 0 auto !important;
-    float: none !important;
 }
 
 
