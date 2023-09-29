@@ -2,6 +2,7 @@ import express, { Express, Request, Response, RequestHandler } from 'express';
 import 'express-async-errors';
 import { IMultiSearchController } from '../Interface';
 import MultiSearchRoutes from './Routes';
+import { ErrorMiddleware } from '../Middleware';
 const cors = require('cors');
 
 export default class App {
@@ -21,7 +22,9 @@ export default class App {
             res.status(200).json('OK');
         })
 
-        this.app.use('/api/multiSearch', this.multiSearchRouter.router)
+        this.app.use('/api/multiSearch', this.multiSearchRouter.router);
+
+        this.app.use(ErrorMiddleware.handleError);
     }
 
     private config() {

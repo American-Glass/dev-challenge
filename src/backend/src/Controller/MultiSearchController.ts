@@ -7,12 +7,8 @@ export default class MultiSearchController implements IMultiSearchController {
   
     public async findAllByName(req: Request, res: Response): Promise<Response> {
         const { body: { text } } = req;
-
-        if (!text) {
-            return res.status(400).json({ message: 'Texto inválido' });
-        }
     
-        const result = await this.multiSearchService.findAllByName(text);
+        const result = await this.multiSearchService.findAllByName(text.trim());
         
         return res.status(200).json(result);
     }
