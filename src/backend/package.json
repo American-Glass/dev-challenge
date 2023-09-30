@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "tsc",
-    "prestart": "mkdir dist/src/DB && cp src/DB/** dist/src/DB",
+    "build": "tsc && mkdir dist/src/DB && cp src/DB/** dist/src/DB",
     "start": "node ./dist/",
     "dev": "ts-node-dev index.ts",
     "dev:nodemon": "nodemon index.ts",
